@@ -72,26 +72,32 @@ export default class App extends Component {
         });
     }
 
-    updateDate() {
-        this.setState({
-            date: new Date()
-        });
+    // updateDate() {
+    //     this.setState({
+    //         date: new Date()
+    //     });
+    // }
+
+    showInConsole = (event) => {
+        console.log(this.state);
+        event.preventDefault();
     }
+
 
     render() {
         return (
             <div>
-                <form>
+                <form onSubmit={this.showInConsole}>
                     <h3>DO NOT WANT</h3>
                     <h4>GIFT COMPLAINT FORM</h4>
                     <div>
                         <label>Name</label>
-                        <input value={this.state.name} onChange={this.handleNameChange} placeholder="Your name" />
+                        <input value={this.state.name} onChange={this.handleNameChange} placeholder="Your name" required />
                     </div>
 
                     <div>
                         <label>Description of bad gift:</label>
-                        <input value={this.state.description} onChange={this.handleDescriptionChange} placeholder="Description of bad gift" />
+                        <input value={this.state.description} onChange={this.handleDescriptionChange} placeholder="Description of bad gift" required />
                     </div>
 
                     <div>
@@ -101,18 +107,21 @@ export default class App extends Component {
                         <Checkbox text="Smells funny" type="checkbox" checked={this.state.smellFunny} onChange={this.handleCheckboxChangeSmellFunny} />
                         <Checkbox text="I'm to young for this" type="checkbox" checked={this.state.toYoungForThis} onChange={this.handleCheckboxChangeToYoungForThis} />
                         <Checkbox text="Ugly color" type="checkbox" checked={this.state.uglyColor} onChange={this.handleCheckboxChangeUglyColor} />
-                        <Checkbox text="Totally not fair" type="checkbox" checked={this.state. totallyNotFair} onChange={this.handleCheckboxChangeTotallyNotFair} />
+                        <Checkbox text="Totally not fair" type="checkbox" checked={this.state.totallyNotFair} onChange={this.handleCheckboxChangeTotallyNotFair} />
                         <Checkbox text="To cheap" type="checkbox" checked={this.state.toCheap} onChange={this.handleCheckboxChangeToCheap} />
 
                     </div>
 
                     <div>
                         <label>Please exchange my gift for:</label>
-                        <input value={this.state.exchange} onChange={this.handleExchangeChange} />
+                        <input value={this.state.exchange} onChange={this.handleExchangeChange} required />
                     </div>
-                    <div>
+                    {/* <div>
                         <label>Date</label>
-                        <input type="date" value={this.state.date} onChange={this.updateDate} />
+                        <input type="date" value={this.state.date} onChange={this.updateDate} required/>
+                    </div> */}
+                    <div>
+                        <button type="submit" >Submit</button>
                     </div>
                 </form>
             </div>
