@@ -5,7 +5,7 @@ export default class Reasons extends Component {
         return (
             <div>
                 <section>
-                    <div>
+                    <div className="checkbox">
                         <input type={this.props.type} checked={this.props.checked} onChange={this.props.onChange} />
                         <label>{this.props.text}</label>
                     </div>

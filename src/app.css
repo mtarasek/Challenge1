@@ -1,0 +1,44 @@
+#container {
+    position: relative;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 400px;
+    padding: 50px;
+    
+}
+
+#contact {
+    background-color: beige;
+    box-shadow: 0 0 10px rgba(150, 150, 150, 0.9);
+    padding: 40px;
+    
+}
+
+#header{
+    border-bottom: solid black 3px;
+    border-top: solid black 3px;
+    text-align: center;
+}
+
+#subtitle{
+    text-align: center;
+}
+
+.input{
+    height: 30px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#button{
+    background-color: green;
+    width: 100%;
+    color: white;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+}
+
+.checkbox{
+    padding: 10px;
+}
